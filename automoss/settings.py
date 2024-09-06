@@ -35,7 +35,7 @@ HOSTNAME = os.getenv("HOST_NAME")
 DEBUG = False
 
 # Specify local/testing server hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0').split(',')
 
 if not DEBUG:
     # Specify production server hosts
