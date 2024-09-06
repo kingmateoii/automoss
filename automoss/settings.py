@@ -35,7 +35,7 @@ HOSTNAME = os.getenv("HOST_NAME")
 DEBUG = True
 
 # Specify local/testing server hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '192.168.100.*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '192.168.100.*','192.168.100.221']
 
 if not DEBUG:
     # Specify production server hosts
@@ -48,6 +48,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1',
     'http://0.0.0.0',
     'http://192.168.100.*',
+    'http://192.168.100.221'
 ]
 # Application definition
 
