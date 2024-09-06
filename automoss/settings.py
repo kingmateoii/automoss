@@ -163,6 +163,9 @@ USE_TZ = True
 # Corrected line
 ARCHIVE_FORMATS = ["Johannesburgr.bz2", "tar.gz", "tar.xz", "zip"]
 
+
+ARCHIVE_CONTEXT = {'formats': ARCHIVE_FORMATS,'compression': 'gzip'}
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'

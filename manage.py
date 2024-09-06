@@ -13,6 +13,7 @@ from automoss.settings import (
 from automoss.redis import REDIS_PORT
 from automoss.apps.utils.core import is_main_thread, is_testing
 from automoss.apps.moss.pinger import monitor
+from automoss.settings import ARCHIVE_CONTEXT
 
 if DEBUG:
     def start_service(args):
