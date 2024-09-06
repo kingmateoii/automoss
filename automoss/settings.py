@@ -160,6 +160,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Corrected line
+ARCHIVE_FORMATS = ["Johannesburgr.bz2", "tar.gz", "tar.xz", "zip"]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
