@@ -20,9 +20,9 @@ MAIN          := manage.py
 
 install:
 	sudo apt-get -y update
-	sudo apt-get -y install redis mysql-server libmysqlclient-dev python3-pip
-	pip3 install -r requirements_dev.txt --upgrade
-	$(MAKE) db
+    sudo apt-get -y install redis mariadb-server libmariadb-dev python3-pip
+    pip3 install -r requirements_dev.txt --upgrade
+    $(MAKE) db
 
 start-mysql:
 	@[ "$(shell ps aux | grep mysqld | grep -v grep)" ] && echo "MySQL already running" || (sudo service mysql start)
