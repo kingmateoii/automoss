@@ -106,4 +106,4 @@ lint:
 		flake8 . --statistics --ignore=E501,W503,F811
 run:
 		@echo "Starting the server on $(HOST_NAME):$(PORT)"
-		python manage.py runserver $(HOST_NAME):$(PORT)
+		python3 manage.py runserver $(HOST_NAME):$(PORT)
