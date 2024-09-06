@@ -5,6 +5,10 @@ if [ -f .env ]; then
   export $(cat .env | xargs)
 fi
 
+# Print environment variables for debugging
+echo "HOST_NAME: $HOST_NAME"
+echo "PORT: $PORT"
+
 # Start MySQL service
 service mysql start
 
