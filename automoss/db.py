@@ -12,14 +12,20 @@ def main():
     DB_HOST = os.getenv('DB_HOST')
 
     MYSQL_ADMIN_USER = os.getenv('MYSQL_ADMIN_USER', 'root')
-    MYSQL_ADMIN_PASSWORD = os.getenv('MYSQL_ADMIN_PASSWORD', '')
+    MYSQL_ADMIN_PASSWORD = os.getenv('MYSQL_ADMIN_PASSWORD', 'password')
+    DB_NAME = os.getenv('DB_NAME')
+    DB_PORT = int(os.getenv('DB_PORT', 3306))  # Default to 3306 if not set
 
     try:
         # Create a connection object
-        connection = pymysql.connect(host=DB_HOST,
-                                     user=MYSQL_ADMIN_USER,
-                                     password=MYSQL_ADMIN_PASSWORD,
-                                     cursorclass=pymysql.cursors.DictCursor)
+       connection = pymysql.connect(
+        host=DB_HOST,
+        user=MYSQL_ADMIN_USER,
+        password=MYSQL_ADMIN_PASSWORD,
+        database=DB_NAME,  # Specify the database name
+        port=DB_PORT,  # Specify the port number
+        cursorclass=pymysql.cursors.DictCursor
+    )
     except pymysql.err.OperationalError as e:
         print('Unable to connect to MYSQL as admin:', e)
         print('Please ensure that "MYSQL_ADMIN_USER" and "MYSQL_ADMIN_PASSWORD" are set correctly as environment variables.')
