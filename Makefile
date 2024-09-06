@@ -19,7 +19,7 @@ COVERAGE_DIR  := htmlcov
 MAIN          := manage.py
 
 install:
-	sudo apt-get -y update
+    sudo apt-get -y update
     sudo apt-get -y install redis mariadb-server libmariadb-dev python3-pip
     pip3 install -r requirements_dev.txt --upgrade
     $(MAKE) db
