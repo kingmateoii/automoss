@@ -25,7 +25,7 @@ install:
     $(MAKE) db
 
 start-mysql:
-	@[ "$(shell ps aux | grep mysqld | grep -v grep)" ] && echo "MySQL already running" || (sudo service mysql start)
+    @[ "$(shell ps aux | grep mysqld | grep -v grep)" ] && echo "MariaDB already running" || (sudo service mariadb start)
 
 run: start-mysql
 	$(PYTHON) $(MAIN) runserver
