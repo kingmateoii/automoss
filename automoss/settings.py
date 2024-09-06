@@ -32,7 +32,7 @@ HOSTNAME = os.getenv("HOST_NAME")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Specify local/testing server hosts
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '192.168.100.*']
@@ -43,7 +43,12 @@ if not DEBUG:
 
     # Uncomment this if not proxies being used (causes too many redirects issue)
     # SECURE_SSL_REDIRECT = True
-
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://0.0.0.0',
+    'http://192.168.100.*',
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -96,10 +101,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'automoss.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-# If running unit tests, create an in-memory sqlite3 database.
-# Otherwise, create a mysql database
+# Databaseohannesburg
 
 DATABASES = {
     'default': {
@@ -150,7 +152,7 @@ DEFAULT_FROM_EMAIL = "automossapp@gmail.com"
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Africa/Johannesburg'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -228,10 +230,7 @@ with capture_in(LANGUAGE_CONTEXT):
         # 'PS' : ('PL/SQL', 'plsql', []),
         # 'AS' : ('ASCII', 'ascii', []) # All?
     }
-
-ARCHIVE_CONTEXT = {}
-with capture_in(ARCHIVE_CONTEXT):
-    SUPPORTED_ARCHIVES = ["rar", "tar", "tar.bz2", "tar.gz", "tar.xz", "zip"]
+ohannesburgr.bz2", "tar.gz", "tar.xz", "zip"]
 
 MOSS_CONTEXT = {}
 with capture_in(MOSS_CONTEXT):
