@@ -232,7 +232,7 @@ with capture_in(LANGUAGE_CONTEXT):
         # 'PS' : ('PL/SQL', 'plsql', []),
         # 'AS' : ('ASCII', 'ascii', []) # All?
     }
-ohannesburgr.bz2", "tar.gz", "tar.xz", "zip"]
+
 
 MOSS_CONTEXT = {}
 with capture_in(MOSS_CONTEXT):
