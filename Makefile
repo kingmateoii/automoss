@@ -32,7 +32,7 @@ install:
 
 start-mysql:
 		# Ensure this line is indented with a tab
-		@[ "$(shell ps aux | grep mysqld | grep -v grep)" ] && echo "MariaDB already running" || (sudo service mariadb start)
+		sudo systemctl start mariadb
 
 run: start-mysql
 		# Ensure this line is indented with a tab
@@ -40,11 +40,14 @@ run: start-mysql
 
 migrations:
 		# Ensure this line is indented with a tab
-		$(PYTHON) $(MAIN) makemigrations && $(PYTHON) $(MAIN) migrate --run-syncdb
+		# Ensure this line is indented with a tab
+		$(PYTHON) manage.py makemigrations
+		# Ensure this line is indented with a tab
+		$(PYTHON) manage.py migrate
 
 create-db:
 		# Ensure this line is indented with a tab
-		$(PYTHON) automoss/db.py
+		$(PYTHON) manage.py migrate
 
 # https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html
 db: start-mysql clean create-db migrations
